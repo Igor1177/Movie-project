@@ -75,9 +75,19 @@ void DrawCar()
     txSetColor(TX_BLACK, 3);
     txSetFillColor(RGB(125, 249, 255));
     POINT Car[17] = {{200, 685}, {185, 660}, {140, 660}, {130, 685}, {85, 685}, {85, 640},
-    {95, 640}, {95, 615}, {165, 570}, {460, 570}, {500, 615}, {605, 645},
+    {95, 640}, {95, 615}, {165, 570}, {460, 570}, {500, 615}, {605, 615},
     {575, 685}, {515, 685}, {495, 660}, {455, 660}, {445, 685}};
     txPolygon (Car, 17);
+
+    txSetColor(RGB(63, 72, 204));
+    txSetFillColor(RGB(63, 72, 204));
+    POINT CarWindow[4] = {{330, 575}, {330, 615}, {495, 615}, {455, 575}};
+    txPolygon (CarWindow, 4);
+
+    txSetColor(TX_YELLOW);
+    txSetFillColor(TX_YELLOW);
+    POINT CarHeadLight[4] = {{605, 615}, {590, 645}, {545, 645}, {545, 615}};
+    txPolygon (CarHeadLight, 4);
 
     txSetColor(TX_BLACK);
     txSetFillColor(TX_BLACK);
