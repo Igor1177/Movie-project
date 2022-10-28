@@ -69,30 +69,30 @@ void DrawDoma()
 }
 
 
-void DrawCar()
+void DrawCar(int x)
 {
 
     txSetColor(TX_BLACK, 3);
     txSetFillColor(RGB(125, 249, 255));
-    POINT Car[17] = {{200, 685}, {185, 660}, {140, 660}, {130, 685}, {85, 685}, {85, 640},
-    {95, 640}, {95, 615}, {165, 570}, {460, 570}, {500, 615}, {605, 615},
-    {575, 685}, {515, 685}, {495, 660}, {455, 660}, {445, 685}};
+    POINT Car[17] = {{x-200, 685}, {x-185, 660}, {x-140, 660}, {x-130, 685}, {x-85, 685}, {x-85, 640},
+    {x-95, 640}, {x-95, 615}, {x-165, 570}, {x-460, 570}, {x-500, 615}, {x-605, 615},
+    {x-575, 685}, {x-515, 685}, {x-495, 660}, {x-455, 660}, {x-445, 685}};
     txPolygon (Car, 17);
 
     txSetColor(RGB(63, 72, 204));
     txSetFillColor(RGB(63, 72, 204));
-    POINT CarWindow[4] = {{330, 575}, {330, 615}, {495, 615}, {455, 575}};
+    POINT CarWindow[4] = {{x-330, 575}, {x-330, 615}, {x-495, 615}, {x-455, 575}};
     txPolygon (CarWindow, 4);
 
     txSetColor(TX_YELLOW);
     txSetFillColor(TX_YELLOW);
-    POINT CarHeadLight[4] = {{605, 615}, {590, 645}, {545, 645}, {545, 615}};
+    POINT CarHeadLight[4] = {{x-605, 615}, {x-590, 645}, {x-545, 645}, {x-545, 615}};
     txPolygon (CarHeadLight, 4);
 
     txSetColor(TX_BLACK);
     txSetFillColor(TX_BLACK);
-    txCircle(165, 695, 35);
-    txCircle(478, 695, 35);
+    txCircle(x-165, 695, 35);
+    txCircle(x-478, 695, 35);
 }
 
 
@@ -113,15 +113,16 @@ int main()
     int xSun = 100;
     int xCloud = 600;
     int xCloud1 = 40;
+    int xCar = 605;
 
-
-    DrawFon();
-    DrawDoma();
-    DrawCar();
-
-
-
-
+    while (xCar < 1500)
+    {
+        DrawFon();
+        DrawDoma();
+        DrawCar(xCar);
+        xCar = xCar + 1;
+        txSleep(1);
+    }
 
     txTextCursor (false);
     return 0;
