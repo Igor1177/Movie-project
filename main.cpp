@@ -48,10 +48,11 @@ void DrawFon2()
     txRectangle(1120, 0, 1450, 540);
     txRectangle(0, 0, 305, 540);
 
+    //вывеска
     txSetFillColor(RGB(7, 126, 1));
     txRectangle(303, 35, 1122, 540);
     txSetColor (TX_BLACK, 4);
-    txRectangle(350, 50, 1080, 285); //вывеска
+    txRectangle(350, 50, 1080, 285);
     txSelectFont ("Arial", 90, 70, FW_BOLD);
     txDrawText(350, 50, 1080, 285, "МАГАЗИН");
 
@@ -86,8 +87,51 @@ void DrawFon2()
     txRectangle(500, 340, 615, 540);
 
 
+    //балконы
+    //1
+    txSetColor(TX_NULL);
+    txSetFillColor(RGB(127, 127, 127));
+    txRectangle(25, 235, 265, 270);
+    //zabor1
+    txSetColor(TX_BLACK, 4);
+    txLine(25, 235, 25, 200);
+    txLine(265, 235, 265, 200);
+    txLine(25, 200, 265, 200);
+    txLine(145, 235, 145, 200);
 
 
+    //2
+    txSetColor(TX_NULL);
+    txSetFillColor(RGB(127, 127, 127));
+    txRectangle(1165, 235, 1420, 270);
+    //lavka
+    txSetColor(RGB(185, 122, 87), 4);
+    txLine(1295, 235, 1305, 225);
+    txLine(1370, 235, 1360, 225);
+    txLine(1304, 225, 1360, 225);
+    //4el
+    txSetColor(TX_BLACK, 4);
+    txSetFillColor(TX_BLACK);
+    txLine(1328, 225, 1335, 160);//nogi
+    txLine(1328, 225, 1300, 223);
+    txLine(1300, 223, 1290, 235);
+    txLine(1328, 225, 1300, 215);
+    txLine(1300, 215, 1285, 235);
+    txLine(1330, 190, 1310, 185);//ryki
+    txLine(1310, 185, 1315, 175);
+    txLine(1330, 190, 1345, 225);
+    txCircle(1335, 145, 17);
+    //sigareta
+    txSetColor(RGB(127, 127, 127), 3);
+    txLine(1315, 180, 1300, 170);
+    txSetColor(TX_RED, 3);
+    txLine(1300, 170, 1305, 173);
+    //zabor2
+    txSetColor(TX_BLACK, 4);
+    txLine(1165, 235, 1165, 200);
+    txLine(1420, 235, 1420, 200);
+    txLine(1165, 200, 1420, 200);
+    txLine(1293, 235, 1293, 200);
 
 }
 
@@ -95,12 +139,12 @@ void DrawFon2()
 void DrawGrassinPot()
 {
 
-    for(int x = 695; x < 770; x+=15)
+    for(int x = 695; x < 770; x+=10)
     {
         txSetColor(RGB(34, 177, 76), 3);
-        txLine(x, 480, x, 400);
-        txLine(x+125, 485, x+125, 400);
-        txLine(x+250, 485, x+250, 400);
+        txLine(x, 483, x, 400);
+        txLine(x+125, 483, x+125, 400);
+        txLine(x+250, 483, x+250, 400);
     }
 
 }
