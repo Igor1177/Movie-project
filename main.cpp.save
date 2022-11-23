@@ -161,6 +161,13 @@ void DrawPotsandGrass()
 void DrawDoma()
 {
     int y1 = 110;
+    int y2 = 165;
+    int y3 = 60;
+    int y4 = 235;
+    int y5 = 255;
+    int y6 = 115;
+    int y7 = 105;
+    
     //Здания на 1 фоне
     //слева направо
     txSetColor(RGB(127, 127, 127));
@@ -181,17 +188,73 @@ void DrawDoma()
     txRectangle(1210, 95, 1390, 545);
 
 
+    //двери
+    //1
+    txRectangle(14);
+
+
+
+
+
+
     //Окна на здания
     //1
     for(int y1 = 110; y1 < 420; y1+=30)
     {
+       
         txSetColor(TX_BLACK, 2);
         txSetFillColor(RGB(0, 162, 232));
-        txRectangle(110, y1, 205, y1+30);
+        txRectangle(110, y1, 205, y1+35);
+        
     }
 
+    //2
+    for(int y2 = 165; y2 < 420; y2+=30)
+    {
+        txSetColor(TX_BLACK, 2);
+        txSetFillColor(RGB(0, 162, 232));
+        txRectangle(225, y2, 370, y2+30);
+    }
 
+    //3
+    for(int y3 = 60; y3 < 415; y3+=30)
+    {
+        txSetColor(TX_BLACK, 2);
+        txSetFillColor(RGB(0, 162, 232));
+        txRectangle(545, y3, 610, y3+30);
+    }
 
+    //4
+    for(int y4 = 235; y4 < 485; y4+=30)
+    {
+        txSetColor(TX_BLACK, 2);
+        txSetFillColor(RGB(0, 162, 232));
+        txRectangle(780, y4, 840, y4+30);
+    }
+
+    //5
+    for(int y5 = 255; y5 < 485; y5+=30)
+    {
+        txSetColor(TX_BLACK, 2);
+        txSetFillColor(RGB(0, 162, 232));
+        txRectangle(860, y5, 920, y5+30);
+    }
+
+    //6
+    for(int y6 = 115; y6 < 505; y6+=30)
+    {
+        txSetColor(TX_BLACK, 2);
+        txSetFillColor(RGB(0, 162, 232));
+        txRectangle(1010, y6, 1100, y6+30);
+    }
+
+    //7
+    for(int y7 = 105; y7 < 460; y7+=30)
+    {
+        txSetColor(TX_BLACK, 2);
+        txSetFillColor(RGB(0, 162, 232));
+        txRectangle(1220, y7, 1380, y7+30);
+    }
 
 
 }
