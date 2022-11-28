@@ -167,7 +167,7 @@ void DrawDoma()
     int y5 = 255;
     int y6 = 115;
     int y7 = 105;
-    
+
     //Здания на 1 фоне
     //слева направо
     txSetColor(RGB(127, 127, 127));
@@ -189,10 +189,18 @@ void DrawDoma()
 
 
     //двери
+    txSetColor(TX_BLACK);
+    txSetFillColor(TX_BLACK);
     //1
-    txRectangle(14);
-
-
+    txRectangle(145, 465, 170, 505);
+    //2
+    txRectangle(270, 465, 295, 505);
+    //3
+    txRectangle(565, 460, 590, 500);
+    //4
+    txRectangle(805, 535, 820, 570);
+    //7
+    txRectangle(1285, 500, 1310, 545);
 
 
 
@@ -201,11 +209,11 @@ void DrawDoma()
     //1
     for(int y1 = 110; y1 < 420; y1+=30)
     {
-       
+
         txSetColor(TX_BLACK, 2);
         txSetFillColor(RGB(0, 162, 232));
         txRectangle(110, y1, 205, y1+35);
-        
+
     }
 
     //2
@@ -292,10 +300,14 @@ void DrawCar(int x)
 
 
 
-void DrawCloud(int x, int x1)
+void DrawCloud(int x)
 {
   //облака
-
+  txEllipse(x, 20, x+215, 75); //85 300
+  txEllipse(x+175, 20, x+385, 80);  //260 470
+  txEllipse(x+600, 120, x+805, 185); //685 890
+  txEllipse(x+820, 25, x+1005, 70);   //905 1090
+  txEllipse(x+960, 25, x+1175, 70); //1045 1260  
 }
 
 
@@ -305,8 +317,7 @@ int main()
     {
     txCreateWindow (1450, 780);
 
-    //int xCloud = 600;
-    //int xCloud1 = 40;
+    int xCloud = 85;
     int xCar = 0;
 
     while (xCar < 1500)
@@ -315,6 +326,7 @@ int main()
         txBegin();
         DrawFon();
         DrawSun();
+        
         DrawDoma();
         DrawCar(xCar);
         xCar = xCar + 10;

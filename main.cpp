@@ -300,10 +300,16 @@ void DrawCar(int x)
 
 
 
-void DrawCloud(int x, int x1)
+void DrawCloud(int x)
 {
   //облака
-
+  txSetColor(TX_BLACK, 2);
+  txSetFillColor(RGB(98, 208, 255));
+  txEllipse(x, 20, x+215, 75); //85 300
+  txEllipse(x+175, 20, x+385, 80);  //260 470
+  txEllipse(x+600, 120, x+805, 185); //685 890
+  txEllipse(x+820, 25, x+1005, 70);   //905 1090
+  txEllipse(x+960, 25, x+1175, 70); //1045 1260
 }
 
 
@@ -313,8 +319,7 @@ int main()
     {
     txCreateWindow (1450, 780);
 
-    //int xCloud = 600;
-    //int xCloud1 = 40;
+    int xCloud = 85;
     int xCar = 0;
 
     while (xCar < 1500)
@@ -323,9 +328,11 @@ int main()
         txBegin();
         DrawFon();
         DrawSun();
+        DrawCloud(xCloud);
         DrawDoma();
         DrawCar(xCar);
-        xCar = xCar + 10;
+        xCar = xCar + 5;
+        xCloud = xCloud + 2;
         txSleep(0.1);
         txEnd();
     }
