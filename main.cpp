@@ -3,6 +3,7 @@
 
 void DrawSun()
 {
+    //солнце
     txSetColor(RGB(255, 255, 0), 1);
     txSetFillColor (RGB(255, 255, 0));
     txCircle(785, 60, 50);
@@ -11,16 +12,16 @@ void DrawSun()
 void DrawFon()
 {
     //небо, трава и дорога
-    txSetFillColor (RGB(63, 72, 204));
+    txSetFillColor(RGB(63, 72, 204));
     txSetColor(RGB(63, 72, 204));
     txRectangle(0, 0, 1450, 780);
 
-    txSetFillColor (RGB(195, 195, 195));
+    txSetFillColor(RGB(195, 195, 195));
     txSetColor(RGB(195, 195, 195));
     txRectangle(0,600,1450, 780);
 
-    txSetColor (RGB(34, 177, 76));
-    txSetFillColor (RGB(34, 177, 76));
+    txSetColor(RGB(34, 177, 76));
+    txSetFillColor(RGB(34, 177, 76));
     txRectangle(0, 400, 1450, 600);
 
 }
@@ -28,22 +29,22 @@ void DrawFon()
 void DrawFon2()
 {
     //дома
-    txSetFillColor (RGB(63, 72, 204));
+    txSetFillColor(RGB(63, 72, 204));
     txRectangle(0, 0, 1450, 780);
     txSetFillColor (RGB(79, 79, 79));
     txRectangle(0, 535, 1450, 780);
 
-    txSetColor (TX_NULL);
-    txSetFillColor (RGB(179, 71, 0));
+    txSetColor(TX_NULL);
+    txSetFillColor(RGB(179, 71, 0));
     txRectangle(1120, 0, 1450, 540);
     txRectangle(0, 0, 305, 540);
 
     //вывеска
     txSetFillColor(RGB(7, 126, 1));
     txRectangle(303, 35, 1122, 540);
-    txSetColor (TX_BLACK, 4);
+    txSetColor(TX_BLACK, 4);
     txRectangle(350, 50, 1080, 285);
-    txSelectFont ("Arial", 90, 70, FW_BOLD);
+    txSelectFont("Arial", 90, 70, FW_BOLD);
     txDrawText(350, 50, 1080, 285, "МАГАЗИН");
 
     //окна
@@ -53,7 +54,7 @@ void DrawFon2()
     txRectangle(45, 85, 255, 170);
     txRectangle(1185, 85, 1405, 170);
 
-    //dveri
+    //двери
     txSetColor(TX_BLACK, 2);
     txSetFillColor(RGB(128, 64, 0));
     txRectangle(95, 340, 195, 540);
@@ -70,7 +71,7 @@ void DrawFon2()
     txSetFillColor(RGB(127, 127, 127));
     txRectangle(25, 235, 265, 270);
 
-    //zabor1
+    //забор балкона-1
     txSetColor(TX_BLACK, 4);
     txLine(25, 235, 25, 200);
     txLine(265, 235, 265, 200);
@@ -83,13 +84,13 @@ void DrawFon2()
     txSetFillColor(RGB(127, 127, 127));
     txRectangle(1165, 235, 1420, 270);
 
-    //lavka
+    //стул на балконе
     txSetColor(RGB(185, 122, 87), 4);
     txLine(1295, 235, 1305, 225);
     txLine(1370, 235, 1360, 225);
     txLine(1304, 225, 1360, 225);
 
-    //4el
+    //курящий
     txSetColor(TX_BLACK, 4);
     txSetFillColor(TX_BLACK);
     txLine(1328, 225, 1335, 160);//nogi
@@ -102,13 +103,13 @@ void DrawFon2()
     txLine(1330, 190, 1345, 225);
     txCircle(1335, 145, 17);
 
-    //sigareta
+    //сигарета
     txSetColor(RGB(127, 127, 127), 3);
     txLine(1315, 180, 1300, 170);
     txSetColor(TX_RED, 3);
     txLine(1300, 170, 1305, 173);
 
-    //zabor2
+    //забор балкона-2
     txSetColor(TX_BLACK, 4);
     txLine(1165, 235, 1165, 200);
     txLine(1420, 235, 1420, 200);
@@ -156,8 +157,7 @@ void DrawDoma()
     int y6 = 115;
     int y7 = 105;
 
-    //Здания на 1 фоне
-    //слева направо
+    //Здания на 1 фоне(слева направо)
     txSetColor(RGB(127, 127, 127));
     txSetFillColor(RGB(127, 127, 127));
     //1
@@ -200,7 +200,7 @@ void DrawDoma()
 
         txSetColor(TX_BLACK, 2);
         txSetFillColor(RGB(0, 162, 232));
-        txRectangle(110, y1, 205, y1+35);
+        txRectangle(110, y1+10, 205, y1+35);
 
     }
 
@@ -209,7 +209,7 @@ void DrawDoma()
     {
         txSetColor(TX_BLACK, 2);
         txSetFillColor(RGB(0, 162, 232));
-        txRectangle(225, y2, 370, y2+30);
+        txRectangle(225, y2+10, 370, y2+30);
     }
 
     //3
@@ -217,7 +217,7 @@ void DrawDoma()
     {
         txSetColor(TX_BLACK, 2);
         txSetFillColor(RGB(0, 162, 232));
-        txRectangle(545, y3, 610, y3+30);
+        txRectangle(545, y3+10, 610, y3+30);
     }
 
     //4
@@ -225,7 +225,7 @@ void DrawDoma()
     {
         txSetColor(TX_BLACK, 2);
         txSetFillColor(RGB(0, 162, 232));
-        txRectangle(780, y4, 840, y4+30);
+        txRectangle(780, y4+10, 840, y4+30);
     }
 
     //5
@@ -233,7 +233,7 @@ void DrawDoma()
     {
         txSetColor(TX_BLACK, 2);
         txSetFillColor(RGB(0, 162, 232));
-        txRectangle(860, y5, 920, y5+30);
+        txRectangle(860, y5+10, 920, y5+30);
     }
 
     //6
@@ -241,7 +241,7 @@ void DrawDoma()
     {
         txSetColor(TX_BLACK, 2);
         txSetFillColor(RGB(0, 162, 232));
-        txRectangle(1010, y6, 1100, y6+30);
+        txRectangle(1010, y6+10, 1100, y6+30);
     }
 
     //7
@@ -249,7 +249,7 @@ void DrawDoma()
     {
         txSetColor(TX_BLACK, 2);
         txSetFillColor(RGB(0, 162, 232));
-        txRectangle(1220, y7, 1380, y7+30);
+        txRectangle(1220, y7+10, 1380, y7+30);
     }
 
 
@@ -329,7 +329,7 @@ int main()
     xCar = -100;
     while (xCar < 1500)
     {
-        // 2 сцена
+        //2 сцена
         txBegin();
         DrawFon2();
         DrawPotsandGrass();
