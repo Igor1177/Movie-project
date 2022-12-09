@@ -93,12 +93,12 @@ void DrawFon2()
     //курящий
     txSetColor(TX_BLACK, 4);
     txSetFillColor(TX_BLACK);
-    txLine(1328, 225, 1335, 160);//nogi
+    txLine(1328, 225, 1335, 160);//ноги
     txLine(1328, 225, 1300, 223);
     txLine(1300, 223, 1290, 235);
     txLine(1328, 225, 1300, 215);
     txLine(1300, 215, 1285, 235);
-    txLine(1330, 190, 1310, 185);//ryki
+    txLine(1330, 190, 1310, 185);//руки
     txLine(1310, 185, 1315, 175);
     txLine(1330, 190, 1345, 225);
     txCircle(1335, 145, 17);
@@ -146,8 +146,7 @@ void DrawPotsandGrass()
 }
 
 
-
-void DrawDoma()
+void DrawDomaFon1()
 {
     int y1 = 110;
     int y2 = 165;
@@ -200,7 +199,7 @@ void DrawDoma()
 
         txSetColor(TX_BLACK, 2);
         txSetFillColor(RGB(0, 162, 232));
-        txRectangle(110, y1, 205, y1+35);
+        txRectangle(110, y1+10, 205, y1+35);
 
     }
 
@@ -209,7 +208,7 @@ void DrawDoma()
     {
         txSetColor(TX_BLACK, 2);
         txSetFillColor(RGB(0, 162, 232));
-        txRectangle(225, y2, 370, y2+30);
+        txRectangle(225, y2+10, 370, y2+30);
     }
 
     //3
@@ -217,7 +216,7 @@ void DrawDoma()
     {
         txSetColor(TX_BLACK, 2);
         txSetFillColor(RGB(0, 162, 232));
-        txRectangle(545, y3, 610, y3+30);
+        txRectangle(545, y3+10, 610, y3+30);
     }
 
     //4
@@ -225,7 +224,7 @@ void DrawDoma()
     {
         txSetColor(TX_BLACK, 2);
         txSetFillColor(RGB(0, 162, 232));
-        txRectangle(780, y4, 840, y4+30);
+        txRectangle(780, y4+10, 840, y4+30);
     }
 
     //5
@@ -233,7 +232,7 @@ void DrawDoma()
     {
         txSetColor(TX_BLACK, 2);
         txSetFillColor(RGB(0, 162, 232));
-        txRectangle(860, y5, 920, y5+30);
+        txRectangle(860, y5+10, 920, y5+30);
     }
 
     //6
@@ -241,7 +240,7 @@ void DrawDoma()
     {
         txSetColor(TX_BLACK, 2);
         txSetFillColor(RGB(0, 162, 232));
-        txRectangle(1010, y6, 1100, y6+30);
+        txRectangle(1010, y6+10, 1100, y6+30);
     }
 
     //7
@@ -249,11 +248,23 @@ void DrawDoma()
     {
         txSetColor(TX_BLACK, 2);
         txSetFillColor(RGB(0, 162, 232));
-        txRectangle(1220, y7, 1380, y7+30);
+        txRectangle(1220, y7+10, 1380, y7+30);
     }
 
 
 }
+
+void DrawStop()
+{
+    txRectangle(850, 600, 865, 445);
+    txRectangle(1140, 600, 1155, 445);
+        
+    txLine(815, 445, 1190, 445);
+    txLine(995, 405, 995);
+}
+
+
+
 
 
 void DrawCar(int x)
@@ -263,9 +274,9 @@ void DrawCar(int x)
     txSetColor(TX_BLACK, 3);
     txSetFillColor(RGB(125, 249, 255));
     POINT Car[8] = {{x+190, 610}, {x+345, 610},
-    {x+345, 515}, {x+580, 515},
-    {x+600, 605}, {x+650, 605},
-    {x+650, 710}, {x+190, 710}};
+                    {x+345, 515}, {x+580, 515},
+                    {x+600, 605}, {x+650, 605},
+                    {x+650, 710}, {x+190, 710}};
     txPolygon (Car, 8);
 
     //окна
@@ -318,7 +329,7 @@ int main()
         DrawFon();
         DrawSun();
         DrawCloud(xCloud);
-        DrawDoma();
+        DrawDomaFon1();
         DrawCar(xCar);
         xCar = xCar + 5;
         xCloud = xCloud + 2;
@@ -327,6 +338,7 @@ int main()
     }
 
     xCar = -100;
+
     while (xCar < 1500)
     {
         //2 сцена
@@ -338,7 +350,9 @@ int main()
         txSleep(0.1);
         txEnd();
     }
+
     txTextCursor (false);
     return 0;
+
     }
 
