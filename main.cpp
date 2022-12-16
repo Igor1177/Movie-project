@@ -185,7 +185,11 @@ void DrawDomaFon1()
     //3
     txRectangle(565, 460, 590, 500);
     //4
-    txRectangle(805, 535, 820, 570);
+    txRectangle(805, 535, 825, 570);
+    //5
+    txRectangle(880, 570, 900, 535);
+    //6
+    txRectangle(1040, 590, 1065, 555);
     //7
     txRectangle(1285, 500, 1310, 545);
 
@@ -252,24 +256,40 @@ void DrawDomaFon1()
     }
 
 
+    //дорожки
+    txSetFillColor(RGB(185, 122, 87));
+    txSetColor(TX_NULL);
+    //1
+    txRectangle(140, 505, 175, 575);
+    //2
+    txRectangle(265, 505, 300, 575);
+    //3
+    txRectangle(560, 500, 595, 575);
+    //перпендикул€рна€ им
+    txRectangle(0, 550, 600, 575);
+    //4
+    txRectangle(800, 570, 830, 600);
+    //5
+    txRectangle(875, 570, 905, 600);
+    //перпендикул€рна€ им
+    txRectangle(910, 600, 600, 575);
+
+
+
+
 }
 
 void DrawStop()
 {
+    //остановка
     txSetColor(TX_RED, 3);
     txSetFillColor(TX_RED);
     txRectangle(850, 600, 865, 445);
     txRectangle(1140, 600, 1155, 445);
 
-    txLine(815, 445, 1190, 445);
-    txLine(865, 405, 1140, 405);
-    txLine(815, 445, 865, 405);
-    txLine(1190, 445, 1140, 405);
+    POINT Stop[4] = {{815, 445}, {1190, 445}, {1140, 405}, {865, 405}};
+    txPolygon (Stop, 4);
 }
-
-
-
-
 
 void DrawCar(int x)
 {
