@@ -118,7 +118,6 @@ void DrawFon2()
 
 }
 
-
 void DrawPotsandGrass()
 {
     //Трава
@@ -144,7 +143,6 @@ void DrawPotsandGrass()
 
 
 }
-
 
 void DrawDomaFon1()
 {
@@ -274,11 +272,59 @@ void DrawDomaFon1()
     //перпендикулярная им
     txRectangle(910, 600, 600, 575);
 
+    POINT road[4] = {{595, 550}, {650, 575}, {650, 595}, {600, 595}};
+    txPolygon(road, 4);
+
 
 
 
 }
 
+void Drawattractions()
+{
+    //Аттракционы между домами
+    int y1 = 415;
+
+    //Турники
+    txSetColor(TX_BLACK, 3);
+    txLine(415, 495, 415, 455);
+    txLine(500, 495, 500, 455);
+    txLine(415, 455, 500, 455);
+    txLine(415, 470, 500, 470);
+
+    for(int y1 = 415; y1 < 500; y1+=10)
+    {
+        txLine(y1, 470, y1, 455);
+    }
+
+    //песочница
+    txSetColor(TX_RED, 3);
+    txSetFillColor(TX_RED);
+    txRectangle(425, 435, 495, 425);
+    txSetColor(RGB(255, 201, 14), 3);
+    txLine(430, 423, 490, 423);
+    txLine(440, 420, 480, 420);
+    txLine(450, 417, 470, 417);
+
+    //качели
+    //1
+    txSetColor(TX_BLACK, 3);
+    txSetFillColor(RGB(255, 201, 14));
+    POINT Swing[3] = {{670, 485}, {700, 485}, {685, 470}};
+    txPolygon (Swing, 3);
+    txLine(630, 470, 740, 470);
+    //2
+    txSetColor(TX_BLACK, 3);
+    txLine(1130, 480, 1130, 440);
+    txLine(1180, 480, 1180, 440);
+    txLine(1130, 440, 1180, 440);
+    txLine(1150, 440, 1150, 465);
+    txLine(1170, 440, 1170, 465);
+    txLine(1150, 465, 1170, 465);
+
+
+
+}
 void DrawStop()
 {
     //остановка
@@ -322,8 +368,6 @@ void DrawCar(int x)
     txCircle(x+620, 735, 35);
 }
 
-
-
 void DrawCloud(int x)
 {
   //облака
@@ -354,6 +398,7 @@ int main()
         DrawSun();
         DrawCloud(xCloud);
         DrawDomaFon1();
+        Drawattractions();
         DrawStop();
         DrawCar(xCar);
         xCar = xCar + 5;
