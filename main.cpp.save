@@ -272,8 +272,8 @@ void DrawDomaFon1()
     //перпендикул€рна€ им
     txRectangle(910, 600, 600, 575);
 
-
-
+    POINT road[4] = {{595, 550}, {650, 575}, {650, 595}, {600, 595}};
+    txPolygon(road, 4);
 
 }
 
@@ -298,10 +298,10 @@ void Drawattractions()
     txSetColor(TX_RED, 3);
     txSetFillColor(TX_RED);
     txRectangle(425, 435, 495, 425);
-    txSetColor(RGB(255, 201, 14));
-    txLine(445, 425, 475, 425);
-    txLine(450, 432, 470, 423);
-    txLine(455, 429, 465, 420);
+    txSetColor(RGB(255, 201, 14), 3);
+    txLine(430, 423, 490, 423);
+    txLine(440, 420, 480, 420);
+    txLine(450, 417, 470, 417);
 
     //качели
     //1
